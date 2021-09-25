@@ -23,8 +23,37 @@ matrix::matrix(int r, int c){
 }
 
 matrix::~matrix(){
-    for(int i = 0; i)
+    cout << "\nReleasing memory!" << endl;
+    for(int i = 0; i < r; i++)
+        delete []p[i];
+    delete []p;
 }
+
+void matrix::input(){
+    for(int i = 0; i < r; i++){
+        cout << "Row " << i+1 << ": " << endl;
+        for(int j = 0; j < c; j++)
+            cin >> p[i][j];
+        cout << endl;
+    }
+}
+
+void matrix::output(){
+    for(int i = 0; i < r; i++){
+        for(int j = 0; j < c; j++)
+            cout << p[i][j] << " ";
+        cout << endl;
+    }
+}
+
 int main(){
+    int r, c;
+    cout << "\nEnter no. of rows and cols : ";
+    cin >> r >> c;
+    matrix m(r, c);
+    cout << "\nEnter " << r*c << " elements : " << endl;
+    m.input();
+    cout << "\nDisplaying matrix" << endl;
+    m.output();
     return 0;
 }
