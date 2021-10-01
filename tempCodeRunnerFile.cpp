@@ -1,1 +1,1 @@
-test
+music.strum();
