@@ -1,1 +1,1 @@
-music.strum();
+password
