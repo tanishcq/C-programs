@@ -36,18 +36,18 @@ class second: virtual public first{
     }
 };
 
-class third: virtual public first{
+class third: virtual public second{
     protected:
     char z;
 
     public:
     void input(){
-        first::input();
+        second::input();
         cout("\nInside third class\nEnter a character : ");
         cin(z);
     }
     void output(){
-        first::output();
+        second::output();
         coutes("Value of Z in third class : ", z);
     }
 };
@@ -55,11 +55,9 @@ class third: virtual public first{
 class fourth: public second, public third{
     public:
     void input(){
-        second::input();
         third::input();
     }
     void output(){
-        second::output();
         third::output();
     }
 };
