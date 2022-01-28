@@ -25,6 +25,7 @@ class employee{
 
     public:
     employee();
+    employee(string);
     ~employee();
     void input();
     void output();  
@@ -35,13 +36,19 @@ employee::employee(){
     input();
 }
 
+employee::employee(string str){
+    name = str;
+}
+
 employee::~employee(){
     cout << "\nDestructor invoked!" << endl;
 }
 
 void employee::input(){
-    cout << "Employee Name : ";
-    cin >> name;
+    if(name == ""){
+        cout << "Employee Name : "; 
+        cin >> name;
+    }
     cout << "Employee ID : ";
     cin >> empID;
     cout << "Basic Salary : ";
